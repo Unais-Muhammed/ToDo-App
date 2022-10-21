@@ -2,6 +2,9 @@ import React , {useState} from 'react';
 import './App.css';
 
 function App() {
+  const current = new Date();
+  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+
   const [toDos,setToDos] = useState([])
   const [toDo,setToDo] = useState('')
 
@@ -12,7 +15,7 @@ function App() {
       </div>
       <div className="subHeading">
         <br />
-        <h2>{Date.now()} 🌝 ☕ </h2>
+        <h2>{date} 🌝 ☕ </h2>
       </div>
       <div className="input">
         <input value={toDo} onChange={(e)=>setToDo(e.target.value)} type="text" placeholder="🖊️ Add item..." />
